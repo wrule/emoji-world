@@ -30,14 +30,13 @@ export default async function (hre: HardhatRuntimeEnvironment) {
   // Deploy this contract. The returned object will be of a `Contract` type, similarly to ones in `ethers`.
   // `greeting` is an argument for contract constructor.
   const parsedFee = ethers.utils.formatEther(deploymentFee.toString());
-  console.log(`部署预计花费 ${parsedFee} ETH`);
+  console.log("部署预计花费: ", parsedFee, "ETH");
 
   const contract = await deployer.deploy(artifact, args);
 
   //obtain the Constructor Arguments
-  console.log("构造函数参数: " + contract.interface.encodeDeploy(args));
+  console.log("构造函数参数: ", contract.interface.encodeDeploy(args));
 
   // Show the contract info.
   console.log(`${artifact.contractName} 已经部署在 ${contract.address}`);
 }
-
