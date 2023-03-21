@@ -13,7 +13,7 @@ if (!PRIVATE_KEY) {
 
 // An example of a deploy script that will deploy and call a simple contract.
 export default async function (hre: HardhatRuntimeEnvironment) {
-  const contractName = "Hello";
+  const contractName = "Emoji";
   console.log(`开始部署 ${contractName} 合约...`);
 
   // Initialize the wallet.
