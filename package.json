@@ -6,8 +6,8 @@
     "compile": "npx hardhat compile",
     "test": "npx hardhat test",
     "clean": "npx hardhat clean",
-    "deploy": "npm run deploy:scrollTestnet",
-    "deploy:scrollTestnet": "npx hardhat run --network scrollTestnet scripts/deploy.ts"
+    "deploy": "npm run deploy:zkSync",
+    "deploy:zkSync": "npx hardhat deploy-zksync"
   },
   "license": "MIT",
   "private": false,
