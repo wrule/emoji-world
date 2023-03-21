@@ -1,10 +1,12 @@
+import * as dotenv from "dotenv";
+dotenv.config();
 import { Wallet, utils } from "zksync-web3";
 import * as ethers from "ethers";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { Deployer } from "@matterlabs/hardhat-zksync-deploy";
 
 // Get private key from the environment variable
-const PRIVATE_KEY: string = process.env.ZKS_PRIVATE_KEY || "";
+const PRIVATE_KEY: string = process.env.PRIVATE_KEY || "";
 if (!PRIVATE_KEY) {
   throw new Error("Please set ZKS_PRIVATE_KEY in the environment variables.");
 }
@@ -26,13 +28,13 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
   // OPTIONAL: Deposit funds to L2
   // Comment this block if you already have funds on zkSync.
-  const depositHandle = await deployer.zkWallet.deposit({
-    to: deployer.zkWallet.address,
-    token: utils.ETH_ADDRESS,
-    amount: deploymentFee.mul(2),
-  });
+  // const depositHandle = await deployer.zkWallet.deposit({
+  //   to: deployer.zkWallet.address,
+  //   token: utils.ETH_ADDRESS,
+  //   amount: deploymentFee.mul(2),
+  // });
   // Wait until the deposit is processed on zkSync
-  await depositHandle.wait();
+  // await depositHandle.wait();
 
   // Deploy this contract. The returned object will be of a `Contract` type, similarly to ones in `ethers`.
   // `greeting` is an argument for contract constructor.
