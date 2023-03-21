@@ -2,6 +2,9 @@
   "name": "emoji-world",
   "version": "0.1.0",
   "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile"
+  },
   "license": "MIT",
   "private": false,
   "devDependencies": {
