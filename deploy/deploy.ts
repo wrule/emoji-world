@@ -13,7 +13,7 @@ if (!PRIVATE_KEY) {
 
 // An example of a deploy script that will deploy and call a simple contract.
 export default async function (hre: HardhatRuntimeEnvironment) {
-  const contractName = "Greeter";
+  const contractName = "Hello";
   console.log(`开始部署 ${contractName} 合约...`);
 
   // Initialize the wallet.
@@ -24,21 +24,20 @@ export default async function (hre: HardhatRuntimeEnvironment) {
   const artifact = await deployer.loadArtifact(contractName);
 
   // Estimate contract deployment fee
-  const greeting = "Hi there!";
-  const deploymentFee = await deployer.estimateDeployFee(artifact, [greeting]);
+  const deploymentFee = await deployer.estimateDeployFee(artifact, []);
 
   // Deploy this contract. The returned object will be of a `Contract` type, similarly to ones in `ethers`.
   // `greeting` is an argument for contract constructor.
   const parsedFee = ethers.utils.formatEther(deploymentFee.toString());
   console.log(`部署预计花费 ${parsedFee} ETH`);
 
-  const greeterContract = await deployer.deploy(artifact, [greeting]);
+  const contract = await deployer.deploy(artifact);
 
   //obtain the Constructor Arguments
-  console.log("构造函数参数: " + greeterContract.interface.encodeDeploy([greeting]));
+  console.log("构造函数参数: " + contract.interface.encodeDeploy());
 
   // Show the contract info.
-  const contractAddress = greeterContract.address;
+  const contractAddress = contract.address;
   console.log(`${artifact.contractName} 已经部署在 ${contractAddress}`);
 }
 
