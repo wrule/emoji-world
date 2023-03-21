@@ -34,6 +34,9 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "dotenv": "^16.0.3"
+    "@matterlabs/hardhat-zksync-deploy": "^0.6.2",
+    "@matterlabs/hardhat-zksync-solc": "^0.3.14",
+    "dotenv": "^16.0.3",
+    "zksync-web3": "^0.13.4"
   }
 }
