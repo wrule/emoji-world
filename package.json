@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "compile": "npx hardhat compile"
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "clean": "npx hardhat clean"
   },
   "license": "MIT",
   "private": false,
