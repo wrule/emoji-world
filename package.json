@@ -5,7 +5,9 @@
   "scripts": {
     "compile": "npx hardhat compile",
     "test": "npx hardhat test",
-    "clean": "npx hardhat clean"
+    "clean": "npx hardhat clean",
+    "deploy": "npm run deploy:scrollTestnet",
+    "deploy:scrollTestnet": "npx hardhat run --network scrollTestnet scripts/deploy.ts"
   },
   "license": "MIT",
   "private": false,
