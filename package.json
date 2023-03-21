@@ -36,6 +36,7 @@
   "dependencies": {
     "@matterlabs/hardhat-zksync-deploy": "^0.6.2",
     "@matterlabs/hardhat-zksync-solc": "^0.3.14",
+    "@openzeppelin/contracts": "^4.8.2",
     "dotenv": "^16.0.3",
     "zksync-web3": "^0.13.4"
   }
