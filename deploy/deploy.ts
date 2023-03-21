@@ -29,7 +29,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
   // Deploy this contract. The returned object will be of a `Contract` type, similarly to ones in `ethers`.
   // `greeting` is an argument for contract constructor.
   const parsedFee = ethers.utils.formatEther(deploymentFee.toString());
-  console.log(`The deployment is estimated to cost ${parsedFee} ETH`);
+  console.log(`部署预计花费 ${parsedFee} ETH`);
 
   const greeterContract = await deployer.deploy(artifact, [greeting]);
 
@@ -38,6 +38,6 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
   // Show the contract info.
   const contractAddress = greeterContract.address;
-  console.log(`${artifact.contractName} was deployed to ${contractAddress}`);
+  console.log(`${artifact.contractName} 已经部署在 ${contractAddress}`);
 }
 
